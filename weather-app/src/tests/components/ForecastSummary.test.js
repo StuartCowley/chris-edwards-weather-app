@@ -1,11 +1,11 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { getAllByTestId, render } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
 
 const validProps = {
   date: 1111111,
   description: "Stub description",
-  icon: "stubIcon",
+  icon: "800",
   temperature: {
     min: 12,
     max: 22,
@@ -42,6 +42,8 @@ describe("ForecastSummary prop values", () => {
       "forecast-summary__description"
     );
     expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
-    expect(getByText("stubIcon")).toHaveClass("forecast-summary__icon");
+    expect(getAllByTestId("forecast-summary__icon")).toHaveClass(
+      "forecast-summary__icon"
+    );
   });
 });

@@ -19,7 +19,7 @@ exports[`ForecastSummaries renders correctly 1`] = `
         data-testid="forecast-icon"
       >
         <img
-          alt="stubIcon1 stubIcon"
+          alt="stubIcon1"
         />
       </div>
       <div
@@ -47,7 +47,7 @@ exports[`ForecastSummaries renders correctly 1`] = `
         data-testid="forecast-icon"
       >
         <img
-          alt="stubIcon2 stubIcon"
+          alt="stubIcon2"
         />
       </div>
       <div
