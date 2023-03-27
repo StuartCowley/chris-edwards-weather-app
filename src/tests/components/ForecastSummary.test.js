@@ -1,5 +1,5 @@
 import React from "react";
-import { getAllByTestId, render } from "@testing-library/react";
+import { getByAltText, render } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
 
 const validProps = {
@@ -28,7 +28,7 @@ describe("ForecastSummary", () => {
 
 describe("ForecastSummary prop values", () => {
   it("renders correct values for props", () => {
-    const { getByText } = render(
+    const { getByText, getByAltText } = render(
       <ForecastSummary
         date={validProps.date}
         description={validProps.description}
@@ -42,7 +42,7 @@ describe("ForecastSummary prop values", () => {
       "forecast-summary__description"
     );
     expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
-    expect(getAllByTestId("forecast-summary__icon")).toHaveClass(
+    expect(getByAltText("800")).toBeInTheDocument("forecast-summary__icon");
       "forecast-summary__icon"
     );
   });
