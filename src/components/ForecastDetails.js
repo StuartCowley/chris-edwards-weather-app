@@ -1,20 +1,13 @@
 import React from "react";
-import ForecastSummary from "./ForecastSummary";
 
-function ForecastDetails({ forecasts = [] }) {
+function ForecastDetails({ forecast }) {
   return (
     <div className="forecast-details">
-      {forecasts.map((forecast) => (
-        <ForecastSummary
-          key={forecast.date}
-          date={forecast.date}
-          temperatureMax={forecast.temperature.max}
-          temperatureMin={forecast.temperature.min}
-          humidity={forecast.humidity}
-          windSpeed={forecast.wind.speed}
-          windDirection={forecast.wind.direction}
-        />
-      ))}
+      <p>Humidity {forecast.humidity}</p>
+      <p>Wind Speed {forecast.wind.speed}</p>
+      <p>Wind Direction {forecast.wind.direction}</p>
+      <p>Temp Min {forecast.temperature.min}</p>
+      <p>Temp Max {forecast.temperature.max}</p>
     </div>
   );
 }

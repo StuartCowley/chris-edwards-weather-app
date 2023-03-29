@@ -1,5 +1,5 @@
 import React from "react";
-import { getByAltText, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import ForecastSummary from "../../components/ForecastSummary";
 
 const validProps = {
@@ -10,6 +10,7 @@ const validProps = {
     min: 12,
     max: 22,
   },
+  onSelect: () => {},
 };
 
 describe("ForecastSummary", () => {
@@ -20,6 +21,7 @@ describe("ForecastSummary", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
     expect(asFragment()).toMatchSnapshot();
@@ -34,6 +36,7 @@ describe("ForecastSummary prop values", () => {
         description={validProps.description}
         icon={validProps.icon}
         temperature={validProps.temperature}
+        onSelect={validProps.onSelect}
       />
     );
 
@@ -42,8 +45,6 @@ describe("ForecastSummary prop values", () => {
       "forecast-summary__description"
     );
     expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
-    expect(getByAltText("800")).toBeInTheDocument("forecast-summary__icon");
-      "forecast-summary__icon"
-    );
+    expect(getByAltText("800")).toHaveClass("forecast-summary__icon");
   });
 });

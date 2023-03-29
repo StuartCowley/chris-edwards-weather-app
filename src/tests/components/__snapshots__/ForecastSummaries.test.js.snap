@@ -20,6 +20,7 @@ exports[`ForecastSummaries renders correctly 1`] = `
       >
         <img
           alt="stubIcon1"
+          class="forecast-summary__icon"
         />
       </div>
       <div
@@ -32,6 +33,11 @@ exports[`ForecastSummaries renders correctly 1`] = `
       >
         Stub description 1
       </div>
+      <button
+        type="button"
+      >
+        More Details
+      </button>
     </div>
     <div
       class="forecast-summary"
@@ -48,6 +54,7 @@ exports[`ForecastSummaries renders correctly 1`] = `
       >
         <img
           alt="stubIcon2"
+          class="forecast-summary__icon"
         />
       </div>
       <div
@@ -60,6 +67,11 @@ exports[`ForecastSummaries renders correctly 1`] = `
       >
         Stub description2
       </div>
+      <button
+        type="button"
+      >
+        More Details
+      </button>
     </div>
   </div>
 </DocumentFragment>

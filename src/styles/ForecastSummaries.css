@@ -2,3 +2,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.icon .description .temperature p {
+  justify-content: center;
+  text-align: center;
+}
+p {
+  text-align: center;
+}
