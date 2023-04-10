@@ -7,6 +7,6 @@ describe("LocationDetails:", () => {
     const { getByText } = render(
       <LocationDetails city="Manchester" country="GB" />
     );
-    expect(getByText("Manchester, GB")).toBeTruthy();
+    expect(getByText("MANCHESTER, GB")).toBeInTheDocument();
   });
 });
