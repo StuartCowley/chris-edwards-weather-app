@@ -6,7 +6,7 @@ function AppHeader({ searchText, setSearchText, onSubmit }) {
   return (
     <header className="AppHeader">
       <div>
-        <h1>UK Weather App</h1>
+        <h1>ClearDAY WEATHER</h1>
       </div>
 
       <div className="searchBar">

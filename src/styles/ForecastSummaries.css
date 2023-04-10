@@ -1,6 +1,8 @@
 .forecast-summaries {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .icon .description .temperature p {

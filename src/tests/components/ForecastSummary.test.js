@@ -40,7 +40,7 @@ describe("ForecastSummary prop values", () => {
       />
     );
 
-    expect(getByText("Thu Jan 01 1970")).toHaveClass("forecast-summary__date");
+    expect(getByText("Thursday")).toHaveClass("forecast-summary__date");
     expect(getByText("Stub description")).toHaveClass(
       "forecast-summary__description"
     );

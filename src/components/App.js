@@ -5,6 +5,8 @@ import getForecast from "./getForecast";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
+import ForecastSummary from "./ForecastSummary";
+import Navbar from "./Navbar";
 
 function App() {
   const [searchText, setSearchText] = useState("");
@@ -29,20 +31,44 @@ function App() {
   };
 
   return (
-    <div className="weather-app">
-      <AppHeader
-        searchText={searchText}
-        setSearchText={setSearchText}
-        onSubmit={handleCitySearch}
-      />
-      <LocationDetails city={location.city} country={location.country} />
-      <div className="forecast">
-        <ForecastSummaries
-          forecasts={forecasts}
-          onForecastSelect={handleForecastSelect}
+    <div className="app-container">
+      <Navbar />
+      <div className="weather-app">
+        <AppHeader
+          searchText={searchText}
+          setSearchText={setSearchText}
+          onSubmit={handleCitySearch}
         />
+        <LocationDetails city={location.city} country={location.country} />
+        <div className="forecast-container">
+          {forecasts && (
+            <div className="forecast-panels">
+              <div className="left-panel">
+                {selectedForecast && (
+                  <ForecastSummary
+                    date={selectedForecast.date}
+                    description={selectedForecast.description}
+                    icon={selectedForecast.icon}
+                    temperature={selectedForecast.temperature}
+                    isSelected={selectedForecast.date === selectedDate}
+                  />
+                )}
+              </div>
+              <div className="right-panel">
+                {selectedForecast && (
+                  <ForecastDetails forecast={selectedForecast} />
+                )}
+              </div>
+            </div>
+          )}
+          <div className="glass-panel">
+            <ForecastSummaries
+              forecasts={forecasts}
+              onForecastSelect={handleForecastSelect}
+            />
+          </div>
+        </div>
       </div>
-      {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
     </div>
   );
 }
