@@ -16,24 +16,23 @@ describe("ForecastDetails", () => {
   };
 
   it("renders correctly", () => {
-    const { asFragment } = render(<ForecastDetails forecasts={validProps} />);
+    const { asFragment } = render(<ForecastDetails forecast={validProps} />);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("displays the correct forecast details", () => {
-    const { getByText } = render(<ForecastDetails forecasts={validProps} />);
-    // expect(getByText(`Humidity: ${validProps.humidity}`)).toBeInTheDocument();
+    const { getByText } = render(<ForecastDetails forecast={validProps} />);
+    expect(getByText(`Humidity: ${validProps.humidity}%`)).toBeInTheDocument();
     expect(
-      getByText(`Wind Speed ${validProps.wind.speed}`)
+      getByText(`Wind speed: ${validProps.wind.speed}mph`)
     ).toBeInTheDocument();
     expect(
-      getByText(`Wind Direction ${validProps.wind.direction}`)
+      getByText(`Wind direction: ${validProps.wind.direction}`)
     ).toBeInTheDocument();
     expect(
-      getByText(`Temp Min ${validProps.temperature.min}`)
-    ).toBeInTheDocument();
-    expect(
-      getByText(`Temp Max ${validProps.temperature.max}`)
+      getByText(
+        `Temp min/max: ${validProps.temperature.min}°C / ${validProps.temperature.max}°C`
+      )
     ).toBeInTheDocument();
   });
 });

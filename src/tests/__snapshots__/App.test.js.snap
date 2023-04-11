@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders App component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="app-container"
+  >
+    <div
+      class="navbar"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="Logo"
+          src="logo.png"
+        />
+      </div>
+      <ul
+        class="nav-links"
+      >
+        <li>
+          <a
+            href="www.google.cim"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="www.google.com"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="www.google.com"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="weather-app"
+    >
+      <header
+        class="AppHeader"
+      >
+        <div>
+          <h1>
+            ClearDAY WEATHER
+          </h1>
+        </div>
+        <div
+          class="searchBar"
+        >
+          <input
+            placeholder="Enter City"
+            type="text"
+            value=""
+          />
+          <button
+            class="searchBar"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </header>
+      <h2>
+         
+      </h2>
+      <div
+        class="forecast-container"
+      >
+        <div
+          class="forecast-panels"
+        >
+          <div
+            class="left-panel"
+          />
+          <div
+            class="right-panel"
+          />
+        </div>
+        <div
+          class="glass-panel"
+        >
+          <div
+            class="forecast-summaries"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
